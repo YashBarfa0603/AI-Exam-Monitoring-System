@@ -212,9 +212,3 @@ Copy the `esp32_firmware/` folder to a USB drive and upload it from any computer
 ## 🤝 Contributing
 
 Issues and pull requests are welcome. If you're adding a feature, please keep the code in the same beginner-friendly style: plain classes and dictionaries, and a comment explaining *why* above non-obvious lines.
-
----
-
-## 📄 License
-
-No license has been specified for this project yet. If you plan to share or open-source this repository, consider adding a `LICENSE` file (e.g. MIT) so others know how they're allowed to use it.
