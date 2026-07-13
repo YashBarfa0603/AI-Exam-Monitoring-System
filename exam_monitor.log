@@ -1,0 +1,9 @@
+2026-07-08 08:06:29,335 [INFO] exam_monitor.main: Initializing Exam Monitoring System...
+2026-07-08 08:06:30,651 [INFO] exam_monitor.camera: Camera stream started on source=0
+2026-07-08 08:06:30,708 [INFO] exam_monitor.object_detector: YOLO model loaded from yolov8n.pt
+2026-07-08 08:06:30,720 [INFO] exam_monitor.face_tracker: MediaPipe Face Mesh initialized (max_faces=5)
+2026-07-08 08:06:30,720 [INFO] exam_monitor.main: Initialization complete. Starting monitoring loop.
+2026-07-08 08:07:19,812 [INFO] exam_monitor.main: Quit key pressed. Shutting down.
+2026-07-08 08:07:19,814 [INFO] exam_monitor.main: Shutting down Exam Monitoring System...
+2026-07-08 08:07:20,246 [INFO] exam_monitor.camera: Camera stream stopped and released.
+2026-07-08 08:07:20,327 [INFO] exam_monitor.main: Shutdown complete.
