@@ -176,7 +176,6 @@ void parseMessage(String msg) {
   currentScore  = msg.substring(ci + 1).toInt();
 }
 
-
 void updateOutputs() {
   digitalWrite(GREEN_LED_PIN,  currentStatus == "SAFE"    ? HIGH : LOW);
   digitalWrite(YELLOW_LED_PIN, currentStatus == "WARNING" ? HIGH : LOW);
