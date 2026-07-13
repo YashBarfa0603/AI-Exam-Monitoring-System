@@ -12,22 +12,17 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-// Uncomment if you have a 16x2 I2C LCD:
-// #include <LiquidCrystal_I2C.h>
-// LiquidCrystal_I2C lcd(0x27, 16, 2);
-
-// ---- CONFIGURATION ----
 const bool USE_WIFI = true;  // false = USB serial, true = WiFi
 const char* WIFI_SSID     = "YOUR_WIFI_SSID"; // Replace with your actual WiFi SSID
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD"; // Replace with your actual WiFi password
 
-// ---- PINS ----
+// PINS
 const int GREEN_LED_PIN  = 19;
 const int YELLOW_LED_PIN = 18;
 const int RED_LED_PIN    = 23;
 const int BUZZER_PIN     = 25;
 
-// ---- STATE ----
+// STATE
 String currentStatus = "SAFE";
 int    currentScore  = 0;
 unsigned long lastBuzzTime = 0;
@@ -89,8 +84,6 @@ void loop() {
   delay(10);
 }
 
-// ---- HARDWARE SELF-TEST (runs once on boot) ----
-
 void runHardwareTest() {
   Serial.println("--- Hardware Self-Test ---");
 
@@ -123,7 +116,7 @@ void scanI2C() {
   if (found == 0) Serial.println("  No I2C devices (normal if no LCD).");
 }
 
-// ---- WIFI MODE ----
+//  WIFI
 
 void startWiFiMode() {
   Serial.println("Mode: WIFI");
@@ -174,7 +167,7 @@ void handleStatusPost() {
   server.send(200, "text/plain", "OK");
 }
 
-// ---- MESSAGE PARSING (serial mode) ----
+// MESSAGE PARSING (serial mode)
 
 void parseMessage(String msg) {
   int ci = msg.indexOf(',');
@@ -183,7 +176,6 @@ void parseMessage(String msg) {
   currentScore  = msg.substring(ci + 1).toInt();
 }
 
-// ---- OUTPUT CONTROL ----
 
 void updateOutputs() {
   digitalWrite(GREEN_LED_PIN,  currentStatus == "SAFE"    ? HIGH : LOW);
